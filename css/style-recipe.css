@@ -1,0 +1,606 @@
+:root {
+  /*dimentions*/
+  --width-full: 100%;
+  --width-12col: 1200px;
+
+  /*grid settings*/
+  --grid-gap: 10px;
+  --padding-default: 20px;
+
+  /*colors*/
+  --background-color-navigation: #00000088;
+  --background-color-light: #ededed;
+  --background-color-dark-bg: #111111;
+  --primary-colour: #bf5b23;
+  --color-light: #ededed;
+  --color-dark: #373737;
+  --color-white: #ffffff;
+
+  /*color swatch for categories*/
+  --category-seafood: #3e30e2;
+  --category-chicken: #299c8e;
+  --category-meats: #d09189;
+  --category-veg: #298f3f;
+  --category-dessert: #9374eb;
+  --category-misc: #9a951e;
+  --category-pasta: #bf5b23;
+}
+
+/*reset css*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+/*Data categories setup*/
+
+/*color names and icons trustttt*/
+
+/*seafood*/
+
+div[data-category="seafood"]{
+    border-left: 1px solid var(--category-seafood);
+}
+
+span[data-category="seafood"]{
+    color: var(--category-seafood);
+}
+
+p[data-category="seafood"]{
+    color: var(--category-seafood);
+}
+
+/*chicken*/
+
+div[data-category="chicken"]{
+    border-left: 1px solid var(--category-chicken);
+}
+
+span[data-category="chicken"]{
+    color: var(--category-chicken);
+}
+
+p[data-category="chicken"]{
+    color: var(--category-chicken);
+}
+
+/*pasta*/
+
+div[data-category="pasta"]{
+    border-left: 1px solid var(--category-pasta);
+}
+
+span[data-category="pasta"]{
+    color: var(--category-pasta);
+}
+
+p[data-category="pasta"]{
+    color: var(--category-pasta);
+}
+
+/*meat*/
+
+div[data-category="meats"]{
+    border-left: 1px solid var(--category-meats);
+}
+
+span[data-category="meats"]{
+    color: var(--category-meats);
+}
+
+p[data-category="meats"]{
+    color: var(--category-meats);
+}
+
+/*vegetarian*/
+
+div[data-category="vegetarian"]{
+    border-left: 1px solid var(--category-veg);
+}
+
+span[data-category="vegetarian"]{
+    color: var(--category-veg);
+}
+
+p[data-category="vegetarian"]{
+    color: var(--category-veg);
+}
+
+/*snacks*/
+
+div[data-category="snacks"]{
+    border-left: 1px solid var(--category-snacks);
+}
+
+span[data-category="snacks"]{
+    color: var(--category-snacks);
+}
+
+p[data-category="snacks"]{
+    color: var(--category-snacks);
+}
+
+/*desserts*/
+
+div[data-category="desserts"]{
+    border-left: 1px solid var(--category-dessert);
+}
+
+span[data-category="desserts"]{
+    color: var(--category-dessert);
+}
+
+p[data-category="desserts"]{
+    color: var(--category-dessert);
+}
+
+/*stuff*/
+
+body{
+    width:var(--width-full); 
+    font-family: 'Roboto' , sans-serif;
+    background-color: var(--background-color-dark-bg);
+    position: relative;
+}
+
+.recipe_page{
+    color: var(--background-color-light);
+    font-family: "Roboto", sans-serif;
+    width: var(--width-12col);
+    margin: 0 auto;
+    padding-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gap);
+}
+
+.container{
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--grid-gap);
+    width: var(--width-full);
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.navigation{
+    width: var(--width-full);
+    height: 80px;
+    background-color: var(--background-color-navigation);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: fixed; /*this was the problem gurl i fixed it*/
+    /*WOMEN IN STEM BOMBOCLATTTT*/
+    top: 20px;
+    left: 0;
+    text-transform: uppercase;
+}
+
+.navigation.fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navigation :hover{
+    color: var(--primary-colour);
+}
+
+.menu-container{
+    width: var(--width-12col);
+}
+
+.menu-container ul{
+    display: flex;
+}
+
+.menu-container ul li{
+    list-style: none;
+}
+
+.menu-container a {
+    color: var(--background-color-light);
+    text-decoration: none;
+    padding: 0 10px;
+    border-right: 1px solid var(--background-color-light);
+}
+
+.menu-container li:last-child a{
+    border-right: none;
+}
+
+.menu-container a:hover{
+    color: var(--primary-colour);
+}
+
+/*start of the actual recipe*/
+.recipe_page_main{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.recipe_intro_text_orange{
+    color: var(--primary-colour);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+
+.recipe_intro_text h1 {
+    font-weight: 200;
+}
+
+.recipe_intro_text h1 span {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: 400;
+}
+
+.recipe_info{
+    display: flex;
+    justify-content: space-between;
+    gap: var(--grid-gap);
+    margin: 20px 0 20px 0;
+    font-size: 14px;
+}
+
+.recipe_info_info{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_icon{
+    color: var(--primary-colour);
+    font-size: 30px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*ingredients*/
+
+
+.recipe_ingredients_start{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.recipe_ingredients{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.recipe_ingredients h5{
+    padding: 10px 0;
+}
+
+
+
+.recipe_ingredients_columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: var(--grid-gap);
+}
+
+.recipe_ingredients_columns ul {
+    padding-left: 15px;
+}
+
+.recipe_ingredients_columns li {
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.recipe_pic{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.recipe_pic img{
+    height: auto;
+    object-fit: contain;
+    clip-path: circle(50% at 50% 50%);
+}
+
+
+.recipe_buttons{
+    display: flex;
+    gap: var(--grid-gap);
+    margin-bottom: 14px;
+}
+
+.recipe_buttons a{
+    text-decoration: none;
+}
+
+.recipe_buttons button {
+    background-color: transparent;
+    color: var(--background-color-light);
+    border: 1px solid var(--background-color-light);
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.recipe_buttons button svg {
+    font-size: 20px;
+    margin: 0 5px 0 0;
+}
+
+.recipe_buttons button:hover{
+    color: var(--primary-colour);
+    border-color: var(--primary-colour);
+}
+
+
+
+/*instructions*/
+
+
+/*im gonna go crazy this shit worked a minute ago why doesnt it follow 12 columns?!?!?!?*/
+.recipe_instructions{
+    height: fit-content;
+    width: var(--width-12col);
+    margin: 0 auto 0 auto;
+}
+
+/*DALEEE QUE ERA MARGIN*/
+
+.todays_recipes_headline{
+    font-size: 37px;
+    color: var(--background-color-light);
+    height: 60px;
+    font-weight: 700;
+    margin-top: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid var(--background-color-light);
+    text-transform: uppercase;
+}
+
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--color-light);
+}
+
+.recipe_instructions li{
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+/*footer*/
+
+.footer {
+  width: var(--width-full);
+  background-color: var(--primary-colour);
+  margin-top: 40px;
+  padding: 45px 20px;
+}
+
+.footer-container {
+  width: var(--width-12col);
+  max-width: 100%;
+  margin: 0 auto; /* centers the element horizontally */
+
+  display: grid; /* organizes items into rows and columns */
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+.footer-social {
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  gap: 12px;
+}
+
+.footer-social a {
+  display: flex; /* places items in a flexible layout */
+  align-items: center; /* centers items vertically */
+  gap: 15px;
+  color: var(--background-color-dark-bg);
+  text-decoration: none; /* removes the link underline */
+  font-size: 16px;
+}
+
+.footer-icon {
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+}
+
+.footer-menu {
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  gap: 15px;
+}
+
+.footer-menu a {
+  color: var(--background-color-dark-bg);
+  text-decoration: none; /* removes the link underline */
+  font-size: 16px;
+}
+
+.footer-right {
+  border-left: 2px solid var(--color-light);
+  padding-left: 40px;
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  justify-content: space-between; /* puts space between items */
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.footer-links {
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  gap: 8px;
+  text-align: right;
+}
+
+.footer-links a {
+  color: var(--color-white);
+  font-size: 12px;
+  text-decoration: none; /* removes the link underline */
+  overflow-wrap: anywhere; /* breaks long text to prevent overflow */
+}
+
+.footer-eco {
+    display: flex; /* places items in a flexible layout */
+    align-items: center; /* centers items vertically */
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.eco-icon {
+    font-size: 22px;
+    display: flex; /* places items in a flexible layout */
+    align-items: center; /* centers items vertically */
+    flex-shrink: 0;
+    color: var(--background-color-dark-bg);
+}
+
+.footer-eco p {
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: left;
+    color: var(--background-color-dark-bg);
+    max-width: 180px;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (width <= 768px) {
+    :root{
+        --width-12col: 100%;
+    }
+
+    .menu-container{
+        display: none;
+    }
+
+    .hamburger-menu{
+        display: block;
+        font-size: 24px;
+        color: var(--color-light);
+        margin-left:auto;
+    }
+
+    .mobile-menu{
+        display: block;
+        position: fixed;
+        top: 100px;
+        right: 0;
+        width: 200px;
+        height: auto;
+        background-color: var(--color-dark);
+        opacity: 0;
+        z-index: 1000;
+        visibility: hidden;
+        transform: translateX(100%);
+    }
+
+    .mobile-menu.open{
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mobile-menu ul{
+        padding: 0;
+    }
+
+    .mobile-menu ul li{
+        list-style: none;
+        padding: 15px;
+    }
+
+    .mobile-menu ul li a{
+        text-decoration: none;
+        color: var(--color-light);
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 12px;
+    }
+
+
+
+
+ .footer_container{
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .footer_links{
+        grid-column:1 / -1;
+        border-left: none;
+        border-top: 1px solid var(--color-light);
+        padding-left: 0;
+        padding-top: 25px;
+        align-items: flex-start;
+    }
+
+    .footer_spotify{
+        text-align: left;
+    }
+
+
+}

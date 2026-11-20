@@ -1,0 +1,548 @@
+:root{
+    /*dimensions*/
+    --width-full: 100%;
+    --width-12col: 1200px;
+
+    /*grid settings*/
+    --grid-gap:10px;
+    --padding-default: 20px;
+
+    /*colors*/
+    --background-color-navigation: #00000088;
+    --background-color-light: #ededed;
+    --background-color-dark-bg: #111111;
+    --primary-color: #bf5b23;
+    --color-light: #ededed;
+    --color-dark: #373737;
+    --color-white:#ffffff;
+
+    /*color swatch for categories*/
+    --category-seafood: #3e30e2;
+    --category-chicken: #299c8e;
+    --category-meats: #d09189;
+    --category-veg: #298f3f;
+    --category-dessert: #9374eb;
+    --category-snacks: #9a951e;
+    --category-pasta: #bf5b23;
+
+}
+
+
+/*reset css*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Data categories setup*/
+
+/*color names and icons trustttt*/
+
+/*seafood*/
+
+div[data-category="seafood"]{
+    border-left: 1px solid var(--category-seafood);
+}
+
+span[data-category="seafood"]{
+    color: var(--category-seafood);
+}
+
+p[data-category="seafood"]{
+    color: var(--category-seafood);
+}
+
+/*chicken*/
+
+div[data-category="chicken"]{
+    border-left: 1px solid var(--category-chicken);
+}
+
+span[data-category="chicken"]{
+    color: var(--category-chicken);
+}
+
+p[data-category="chicken"]{
+    color: var(--category-chicken);
+}
+
+/*pasta*/
+
+div[data-category="pasta"]{
+    border-left: 1px solid var(--category-pasta);
+}
+
+span[data-category="pasta"]{
+    color: var(--category-pasta);
+}
+
+p[data-category="pasta"]{
+    color: var(--category-pasta);
+}
+
+/*meat*/
+
+div[data-category="meats"]{
+    border-left: 1px solid var(--category-meats);
+}
+
+span[data-category="meats"]{
+    color: var(--category-meats);
+}
+
+p[data-category="meats"]{
+    color: var(--category-meats);
+}
+
+/*vegetarian*/
+
+div[data-category="veg"]{
+    border-left: 1px solid var(--category-veg);
+}
+
+span[data-category="veg"]{
+    color: var(--category-veg);
+}
+
+p[data-category="veg"]{
+    color: var(--category-veg);
+}
+
+/*snacks*/
+
+div[data-category="snacks"]{
+    border-left: 1px solid var(--category-snacks);
+}
+
+span[data-category="snacks"]{
+    color: var(--category-snacks);
+}
+
+p[data-category="snacks"]{
+    color: var(--category-snacks);
+}
+
+/*desserts*/
+
+div[data-category="dessert"]{
+    border-left: 1px solid var(--category-dessert);
+}
+
+span[data-category="dessert"]{
+    color: var(--category-dessert);
+}
+
+p[data-category="dessert"]{
+    color: var(--category-dessert);
+}
+
+/*stuff*/
+
+body{
+    width:var(--width-full); 
+    font-family: 'Roboto' , sans-serif;
+    background-color: var(--background-color-dark-bg);
+    color: var(--color-light);
+    position: relative;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+.navigation{
+    width: var(--width-full);
+    height: 80px;
+    background-color: var(--background-color-navigation);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: fixed; /*this was the problem gurl i fixed it*/
+    /*WOMEN IN STEM BOMBOCLATTTT*/
+    top: 20px;
+    left: 0;
+    text-transform: uppercase;
+}
+
+.navigation.fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu-container{
+    width: var(--width-12col);
+}
+
+.menu-container ul{
+    display: flex;
+}
+
+.menu-container ul li{
+    list-style: none;
+}
+
+.menu-container a {
+    color: var(--background-color-light);
+    text-decoration: none;
+    padding: 0 10px;
+    border-right: 1px solid var(--background-color-light);
+}
+
+.menu-container li:last-child a{
+    border-right: none;
+}
+
+.menu-container a:hover{
+    color: var(--primary-color);
+}
+
+.search_container{
+    width: var(--width-12col);
+    max-width: calc(100% - 40px);
+    /*what with the calculation thing?*/
+    margin: 0 auto;
+    gap: var(--grid-gap);
+}
+
+/*actual search part*/
+.search_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 150px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.hero-search{
+    width: 100%;
+}
+
+
+.search_section h1{
+    font-weight: 400;
+}
+
+/*isnt color for text and bg color for logical bg color? cause we be putting wtv*/
+
+/*search left*/
+
+.search_left{
+    padding-top: 25px;
+}
+
+.search_left h1{
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.search_left p{
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 30px 0;
+    gap: var(--grid-gap);
+}
+
+.search-input{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid var(--background-color-light);
+    outline: none;
+    color: var(--background-color-light);
+    padding: 10px 20px 10px 40px;
+}
+
+.search-input::placeholder{
+    color: var(--background-color-light);
+}
+
+.search-icon{
+    position: absolute;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    color: var(--background-color-light);
+}
+/*y empezamos con a saber tu que form y que cosas raras*/
+
+
+
+.search_right{
+     background: linear-gradient(
+    110deg,
+    #292929 0%,
+    #222222 45%,
+    var(--background-color-dark-bg) 100%
+  );
+    border-radius: 5px;
+    padding: 25px 20px;
+}
+
+.search_right h2{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+.category-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*whats the difference between this and grid columns, no template?*/
+}
+
+.category-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-column label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.category-column input {
+    width: 25px;
+    height: 25px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.search_results {
+    padding: 60px 90px;
+}
+
+.search_result {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.result-category {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border-left: 2px solid;
+  padding-left: 8px;
+}
+
+.white_col {
+  color: var(--color-light);
+}
+
+.search_result h2{
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+
+
+/*footer*/
+
+.footer {
+  width: var(--width-full);
+  background-color: var(--primary-color);
+  margin-top: 40px;
+  padding: 45px 20px;
+}
+
+.footer-container {
+  width: var(--width-12col);
+  max-width: 100%;
+  margin: 0 auto; /* centers the element horizontally */
+
+  display: grid; /* organizes items into rows and columns */
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+.footer-social {
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  gap: 12px;
+}
+
+.footer-social a {
+  display: flex; /* places items in a flexible layout */
+  align-items: center; /* centers items vertically */
+  gap: 15px;
+  color: var(--background-color-dark-bg);
+  text-decoration: none; /* removes the link underline */
+  font-size: 16px;
+}
+
+.footer-icon {
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
+}
+
+.footer-menu {
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  gap: 15px;
+}
+
+.footer-menu a {
+  color: var(--background-color-dark-bg);
+  text-decoration: none; /* removes the link underline */
+  font-size: 16px;
+}
+
+.footer-right {
+  border-left: 2px solid var(--color-light);
+  padding-left: 40px;
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  justify-content: space-between; /* puts space between items */
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.footer-links {
+  display: flex; /* places items in a flexible layout */
+  flex-direction: column; /* stacks items vertically */
+  gap: 8px;
+  text-align: right;
+}
+
+.footer-links a {
+  color: var(--color-white);
+  font-size: 12px;
+  text-decoration: none; /* removes the link underline */
+  overflow-wrap: anywhere; /* breaks long text to prevent overflow */
+}
+
+.footer-eco {
+    display: flex; /* places items in a flexible layout */
+    align-items: center; /* centers items vertically */
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.eco-icon {
+    font-size: 22px;
+    display: flex; /* places items in a flexible layout */
+    align-items: center; /* centers items vertically */
+    flex-shrink: 0;
+    color: var(--background-color-dark-bg);
+}
+
+.footer-eco p {
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: left;
+    color: var(--background-color-dark-bg);
+    max-width: 180px;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
+
+
+
+@media (width <= 768px) {
+    :root{
+        --width-12col: 100%;
+    }
+
+    .menu-container{
+        display: none;
+    }
+
+    .hamburger-menu{
+        display: block;
+        font-size: 24px;
+        color: var(--color-light);
+        margin-left:auto;
+    }
+
+    .mobile-menu{
+        display: block;
+        position: fixed;
+        top: 100px;
+        right: 0;
+        width: 200px;
+        height: auto;
+        background-color: var(--color-dark);
+        opacity: 0;
+        z-index: 1000;
+        visibility: hidden;
+        transform: translateX(100%);
+    }
+
+    .mobile-menu.open{
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mobile-menu ul{
+        padding: 0;
+    }
+
+    .mobile-menu ul li{
+        list-style: none;
+        padding: 15px;
+    }
+
+    .mobile-menu ul li a{
+        text-decoration: none;
+        color: var(--color-light);
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 12px;
+    }
+
+
+
+
+ .footer_container{
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .footer_links{
+        grid-column:1 / -1;
+        border-left: none;
+        border-top: 1px solid var(--color-light);
+        padding-left: 0;
+        padding-top: 25px;
+        align-items: flex-start;
+    }
+
+    .footer_spotify{
+        text-align: left;
+    }
+
+
+}
+
+
+
+
